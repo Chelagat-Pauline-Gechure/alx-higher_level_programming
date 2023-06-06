@@ -1,3 +1,3 @@
 #!/usr/bin/python3
-for char in "zYxWvUtSrQpOnMlKjIhGfEdCbA":
-    print(char, end='')
+for char in "AbCdEfGhIjKlMnOpQrStUvWxYz"[::-1]:
+    print("{}".format(char), end="")
