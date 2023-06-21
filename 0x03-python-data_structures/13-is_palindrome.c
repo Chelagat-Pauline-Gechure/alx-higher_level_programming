@@ -85,7 +85,7 @@ int check_palindrome_bruteforce(listint_t **head)
     int *numbers;
     listint_t *curr = *head;
 
-    list_length = linked_list_lengthgth(head);
+    list_length = linked_list_length(head);
 
     
     numbers = malloc(sizeof(int) * list_length);
