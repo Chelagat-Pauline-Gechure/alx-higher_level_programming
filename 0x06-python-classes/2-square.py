@@ -3,8 +3,8 @@
 
 
 class Square:
-    """ 
-        Defining a class square 
+    """
+        Defining a class square
         Attributes:
             size: size of the square
         Method:
