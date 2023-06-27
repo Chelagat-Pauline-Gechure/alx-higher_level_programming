@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-    
+    Creating & defining a square class
 """
 
 
