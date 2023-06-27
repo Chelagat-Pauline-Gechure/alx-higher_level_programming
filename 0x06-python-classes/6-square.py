@@ -8,7 +8,7 @@ Defines class Square with private size and position; and public area
 class Square:
     """
     class Square definition
-    
+
     """
 
     def __init__(self, size=0, position=(0, 0)):
@@ -55,7 +55,7 @@ class Square:
     def position(self, value):
         """
         Setter function for private attribute position.
-       
+
         """
         if type(value) is not tuple or len(value) != 2 or \
            type(value[0]) is not int or type(value[1]) is not int or \
@@ -67,7 +67,6 @@ class Square:
     def area(self):
         """
         Calculates area of square
-        
         """
         return (self.__size)**2
 
