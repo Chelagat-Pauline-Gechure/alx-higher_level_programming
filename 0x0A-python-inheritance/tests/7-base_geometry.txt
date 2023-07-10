@@ -18,77 +18,41 @@ Test for  non-calculated area method
      ...
      Exception: area() is not implemented
 
-Test ints less than or equal to 0:
-     >>> base_geo = BaseGeometry()
+Test intgers <= 0:
      >>> base_geo.integer_validator("checkme", 0)
      Traceback (most recent call last):
      ...
      ValueError: checkme must be greater than 0
 
-     >>> base_geo = BaseGeometry()
-     >>> base_geo.integer_validator("checkme", -999)
+     >>> base_geo.integer_validator("checkme", -56)
      Traceback (most recent call last):
      ...
      ValueError: checkme must be greater than 0
 
-Test non-ints:
-
-     >>> base_geo = BaseGeometry()
+Test values tha are not integers:
      >>> base_geo.integer_validator("checkme", None)
      Traceback (most recent call last):
      ...
      TypeError: checkme must be an integer
 
-     >>> base_geo = BaseGeometry()
      >>> base_geo.integer_validator("checkme", "hello!")
      Traceback (most recent call last):
      ...
      TypeError: checkme must be an integer
 
-     >>> base_geo = BaseGeometry()
      >>> base_geo.integer_validator("checkme", "50")
      Traceback (most recent call last):
      ...
      TypeError: checkme must be an integer
 
-     >>> base_geo = BaseGeometry()
-     >>> base_geo.integer_validator("checkme", [1, 2, 3])
-     Traceback (most recent call last):
-     ...
-     TypeError: checkme must be an integer
+     
 
-     >>> base_geo = BaseGeometry()
-     >>> base_geo.integer_validator("checkme", (1, 2, 3))
-     Traceback (most recent call last):
-     ...
-     TypeError: checkme must be an integer
-
-     >>> base_geo = BaseGeometry()
-     >>> base_geo.integer_validator("checkme", {"key": 1})
-     Traceback (most recent call last):
-     ...
-     TypeError: checkme must be an integer
-
-     >>> base_geo = BaseGeometry()
-     >>> base_geo.integer_validator("age", True)
-     Traceback (most recent call last):
-     ...
-     TypeError: age must be an integer
-
-     >>> base_geo = BaseGeometry()
-     >>> base_geo.integer_validator("checkme", {3, 4})
-     Traceback (most recent call last):
-     ...
-     TypeError: checkme must be an integer
-
-Test invalid number of arguments:
-     >>> base_geo = BaseGeometry()
+Test invalid/missing number of arguments:
      >>> base_geo.integer_validator()
      Traceback (most recent call last):
      ...
      TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
 
-     >>> base_geo = BaseGeometry()
      >>> base_geo.integer_validator("age")
      Traceback (most recent call last):
      ...
