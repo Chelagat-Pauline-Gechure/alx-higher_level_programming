@@ -1,0 +1,14 @@
+Test cases for 1-my_list.py to confirm 
+that indeed the 'def print_sorted(self):' function 
+returns a sorted copy of the original integer list.
+
+Import the module:
+	>>> MyList = __import__('1-my_list').MyList
+
+Test Python list methods:
+	>>> new_list = MyList()
+
+	>>> new_list.append(9)
+
+	>>> new_list
+	[9]
