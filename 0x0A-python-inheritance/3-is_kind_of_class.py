@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 
-""" Module to check whether it is the same class or it inherits from another """
+""" Module to check whether it is the same class 
+    or it inherits from another """
 
 
 def is_kind_of_class(obj, a_class):
