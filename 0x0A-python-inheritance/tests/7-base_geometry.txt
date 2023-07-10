@@ -30,6 +30,7 @@ Test intgers <= 0:
      ValueError: checkme must be greater than 0
 
 Test values tha are not integers:
+     >>> base_geo = BaseGeometry()
      >>> base_geo.integer_validator("checkme", None)
      Traceback (most recent call last):
      ...
@@ -48,6 +49,7 @@ Test values tha are not integers:
      
 
 Test invalid/missing number of arguments:
+     >>> base_geo = BaseGeometry()
      >>> base_geo.integer_validator()
      Traceback (most recent call last):
      ...
