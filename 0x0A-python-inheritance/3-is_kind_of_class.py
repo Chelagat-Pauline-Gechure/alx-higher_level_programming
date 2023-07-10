@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-""" Module to check whether it is the same class 
+""" Module to check whether it is the same class
     or it inherits from another """
 
 
