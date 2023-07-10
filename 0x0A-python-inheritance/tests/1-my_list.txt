@@ -3,26 +3,25 @@
 
 
 Import module
+========================
     >>> MyList = __import__('1-my_list').MyList
 
 
-Module Test Cases
-
+SUCCESSFUL TESTS
 
 Create new instance of my list
 
     >>> new_list = MyList()
 
-Empty list test
+Print out the empty unsorted list 
 
     >>> print(new_list)
     []
 
-Empty sorted list test
     >>> new_list.print_sorted()
     []
 
-List method tests using append method
+Append some positive integers
 
     >>> new_list.append(1)
     >>> new_list.append(4)
@@ -30,17 +29,23 @@ List method tests using append method
     >>> new_list.append(3)
     >>> new_list.append(5)
 
+Print unsorted orginal list
     >>> print(new_list)
     [1, 4, 2, 3, 5]
 
-Sort function test
+Test the `print_sorted()` method
 
     >>> new_list.print_sorted()
     [1, 2, 3, 4, 5]
 
-Mixed sign integer test
+Test the `print_sorted()` method some negative numbers
 
-    >>> new_list.append(-11)
-    >>> new_list.append(-3)
+    >>> new_list.append(-101)
+    >>> new_list.append(-909)
+    >>> new_list.append(-606)
+
+    >>> print(new_list)
+    [1, 4, 2, 3, 5, -101, -909, -606]
+
     >>> new_list.print_sorted()
-    [-11, -3, 1, 2, 3, 4, 5]
+    [-909, -606, -101, 1, 2, 3, 4, 5]
