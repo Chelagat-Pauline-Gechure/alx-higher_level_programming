@@ -5,10 +5,24 @@ returns a sorted copy of the original integer list.
 Import the module:
 	>>> MyList = __import__('1-my_list').MyList
 
-Test Python list methods:
+Test Cases:
+===========
+
+Empty sorted list test
 	>>> new_list = MyList()
+	>>> new_list.print_sorted()
+	[]
 
-	>>> new_list.append(9)
+List method test
+	>>> new_list.append(1)
+	>>> new_list.append(4)
+	>>> new_list.append(2)
+	>>> new_list.append(3)
+	>>> new_list.append(5)
 
-	>>> new_list
-	[9]
+	>>> print(new_list)
+	[1,4,2,3,5]
+
+Print_sorted method test
+	>>> new_list.print_sorted()
+	[1,2,3,4,5]
