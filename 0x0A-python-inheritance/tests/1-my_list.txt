@@ -1,28 +1,46 @@
-Test cases for 1-my_list.py to confirm 
-that indeed the 'def print_sorted(self):' function 
-returns a sorted copy of the original integer list.
+1-my_list.py module
+========================
 
-Import the module:
-	>>> MyList = __import__('1-my_list').MyList
 
-Test Cases:
-===========
+Import module
+    >>> MyList = __import__('1-my_list').MyList
+
+
+Module Test Cases
+
+
+Create new instance of my list
+
+    >>> new_list = MyList()
+
+Empty list test
+
+    >>> print(new_list)
+    []
 
 Empty sorted list test
-	>>> new_list = MyList()
-	>>> new_list.print_sorted()
-	[]
+    >>> new_list.print_sorted()
+    []
 
-List method test
-	>>> new_list.append(1)
-	>>> new_list.append(4)
-	>>> new_list.append(2)
-	>>> new_list.append(3)
-	>>> new_list.append(5)
+List method tests using append method
 
-	>>> print(new_list)
-	[1,4,2,3,5]
+    >>> new_list.append(1)
+    >>> new_list.append(4)
+    >>> new_list.append(2)
+    >>> new_list.append(3)
+    >>> new_list.append(5)
 
-Print_sorted method test
-	>>> new_list.print_sorted()
-	[1,2,3,4,5]
+    >>> print(new_list)
+    [1, 4, 2, 3, 5]
+
+Sort function test
+
+    >>> new_list.print_sorted()
+    [1, 2, 3, 4, 5]
+
+Mixed sign integer test
+
+    >>> new_list.append(-11)
+    >>> new_list.append(-3)
+    >>> new_list.print_sorted()
+    [-11, -3, 1, 2, 3, 4, 5]
