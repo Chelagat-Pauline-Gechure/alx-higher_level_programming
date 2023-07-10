@@ -12,8 +12,7 @@ Test values greater than 0: don't raise error or return anything:
 
 FAILING TEST CASES:
 
-Test non-implemented area method
-     >>> base_geo = BaseGeometry()
+Test for  non-calculated area method
      >>> base_geo.area()
      Traceback (most recent call last):
      ...
