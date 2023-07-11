@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """
-Module:101-stats
-Reads stdin line by line and computes metrics
+Reads from standard input and computes metrics
 """
 
 
@@ -10,20 +9,20 @@ if __name__ == "__main__":
 
     stdin = sys.stdin
 
-    count = 0
+    c = 0
     size = 0
-    valid = ['200', '301', '400', '401', '403', '404', '405', '500']
-    status = {}
+    vd = ['200', '301', '400', '401', '403', '404', '405', '500']
+    st = {}
 
     try:
         for line in stdin:
-            if count == 10:
+            if c == 10:
                 print("File size: {}".format(size))
-                for i in sorted(status):
-                    print("{}: {}".format(i, status[i]))
-                count = 1
+                for i in sorted(st):
+                    print("{}: {}".format(i, st[i]))
+                c = 1
             else:
-                count = count + 1
+                c = c + 1
 
             line = line.split()
 
@@ -33,20 +32,20 @@ if __name__ == "__main__":
                 pass
 
             try:
-                if line[-2] in valid:
-                    if status.get(line[-2], -1) == -1:
-                        status[line[-2]] = 1
+                if line[-2] in vd:
+                    if st.get(line[-2], -1) == -1:
+                        st[line[-2]] = 1
                     else:
-                        status[line[-2]] = status[line[-2]] + 1
+                        st[line[-2]] = st[line[-2]] + 1
             except IndexError:
                 pass
 
         print("File size: {}".format(size))
-        for i in sorted(status):
-            print("{}: {}".format(i, status[i]))
+        for i in sorted(st):
+            print("{}: {}".format(i, st[i]))
 
     except KeyboardInterrupt:
         print("File size: {}".format(size))
-        for i in sorted(status):
-            print("{}: {}".format(i, status[i]))
+        for i in sorted(st):
+            print("{}: {}".format(i, st[i]))
         raise
