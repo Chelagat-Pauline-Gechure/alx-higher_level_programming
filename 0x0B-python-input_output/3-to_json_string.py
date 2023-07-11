@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" 
+"""
 Moduele: 3-to_json_string
 Has function that returns the JSON representation of an object
 """
