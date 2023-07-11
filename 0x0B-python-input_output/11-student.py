@@ -28,7 +28,7 @@ class Student:
                 if att in self.__dict__.keys():
                     diction[att] = self.__dict__[att]
             return diction
-        
+
     def reload_from_json(self, json):
         """
         Return:
