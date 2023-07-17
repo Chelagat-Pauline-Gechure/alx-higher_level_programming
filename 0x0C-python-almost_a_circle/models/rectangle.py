@@ -5,7 +5,7 @@ from models.base import Base
 
 
 class Rectangle(Base):
-    """ Defines the Retangle class. """
+    """ Defines the Rectangle class that inherits frm Base class. """
     def __init__(self, width, height, x=0, y=0, id=None):
         """
         Rectangle object initialization.
@@ -32,7 +32,7 @@ class Rectangle(Base):
         @width.setter
         def width(self, value):
             """ Checks the rectangle's width """
-            if not isinstance(value, int):
+            if type(value) is not int:
                 raise TypeError("width must be an integer")
             if value <= 0:
                 raise ValueError("width must be > 0")
@@ -45,7 +45,7 @@ class Rectangle(Base):
 
         @height.setter
         def height(self, value):
-            if not isinstance(value, int):
+            if type(value) is not int:
                 raise TypeError("height must be an integer")
             if value <= 0:
                 raise ValueError("height must be > 0")
@@ -58,7 +58,7 @@ class Rectangle(Base):
 
         @x.setter
         def x(self, value):
-            if not isinstance(value, int):
+            if type(value) is not int:
                 raise TypeError("x must be an integer")
             if value < 0:
                 raise ValueError("x must be >= 0")
@@ -71,7 +71,7 @@ class Rectangle(Base):
 
         @y.setter
         def y(self, value):
-            if not isinstance(value, int):
+            if type(value) is not int:
                 return TypeError("y must be an integer")
             if value < 0:
                 return ValueError("y must be >= 0")
