@@ -8,13 +8,6 @@ import MySQLdb
 
 if __name__ == "__main__":
     username, password, db_name = sys.argv[1], sys.argv[2], sys.argv[3]
-    statement: str = """
-    SELECT *
-    FROM states
-    WHERE BINARY name LIKE 'N%'
-    ORDER BY id
-    """
-
     db = MySQLdb.connect(
         user=username,
         host="localhost",
@@ -24,7 +17,7 @@ if __name__ == "__main__":
     )
     cursor = db.cursor()
 
-    cursor.execute(statement)
+    cursor.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC")
 
     for row in cursor.fetchall():
         print(row)
