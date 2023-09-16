@@ -24,7 +24,7 @@ if __name__ == "__main__":
     )
     cursor = db.cursor()
 
-    cursor.execute(statement)
+    cursor.execute(sql_query)
     rows = cursor.fetchall()
     for row in rows:
         print(row)
