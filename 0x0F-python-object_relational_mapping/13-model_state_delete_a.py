@@ -26,7 +26,7 @@ if __name__ == "__main__":
     session = Session()
 
     """Delete states with letter 'a' and commit the changes"""
-    delete_states = session.query(State).filter(State.name.like(f'%a')).all()
+    delete_states = session.query(State).filter(State.name.like(f'%a%')).all()
     if delete_states:
         for state in delete_states:
             session.delete(state)
