@@ -4,14 +4,14 @@ Lists all states objects from the database htbn_0e_6_usa
 """
 
 import sys
-from sqlalchemy import create_engine, select
+from sqlalchemy import create_engine, select, insert
 from model_state import Base, State
+from sqlalchemy.orm import sessionmaker
 
 if __name__ == "__main__":
     username = sys.argv[1]
     password = sys.argv[2]
     db_name = sys.argv[3]
-    new_state_name = "Louisiana"
 
     """SQLAlchemy database engine created with pooling & pre-ping"""
     engine = create_engine(
@@ -20,18 +20,13 @@ if __name__ == "__main__":
         ),
         pool_pre_ping=True,
     )
-    """Establish connection to the database"""
-    with engine.connect() as connection:
-        query = select(State).where(State.name == new_state_name)
-        existing_state = connection.execute(query).fetchone()
 
-        """Iterate over results & display them"""
-        if existing_state:
-            print(existing_state.id)
-        else:
-            new_state = State(name=new_statae_name)
-            connection.add(new_state)
-            connection.flush """Flush to generate the id"""
-            print(new_state.id)
+    Session = sessionmaker(bind=engine)
+    session = Session()
 
-    engine.dispose()
+    new_state_name = State(name="Louisiana")
+    session.add(new_state_name)
+    session.commit()
+
+    print('{0}'.format(new_state_name.id))
+    session.close()
