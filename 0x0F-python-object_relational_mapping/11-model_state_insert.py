@@ -21,9 +21,11 @@ if __name__ == "__main__":
         pool_pre_ping=True,
     )
 
+    """Create a session factory to interact with the DB in an ORM context"""
     Session = sessionmaker(bind=engine)
     session = Session()
 
+    """Create a new state and commit the changes"""
     new_state_name = State(name="Louisiana")
     session.add(new_state_name)
     session.commit()
