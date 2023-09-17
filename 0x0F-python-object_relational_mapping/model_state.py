@@ -6,12 +6,12 @@ from sqlalchemy import create_engine, Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
-# Create an instance of declarative base
+"""Create an instance of declarative base"""
 Base = declarative_base()
 
 
-# Define the State class
 class State(Base):
+    """Define the State class"""
     __tablename__ = 'states'
 
     id = Column(Integer, primary_key=True, nullable=False, unique=True, autoincrement=True)
