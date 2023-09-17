@@ -22,7 +22,6 @@ if __name__ == "__main__":
         port=3306,
     )
     cursor = db.cursor()
-    
     cursor.execute(sqlQuery, (state_name,))
 
     cities = cursor.fetchall()
