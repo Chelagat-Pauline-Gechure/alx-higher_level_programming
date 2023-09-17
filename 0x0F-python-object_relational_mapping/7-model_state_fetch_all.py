@@ -1,9 +1,11 @@
 #!/usr/bin/python3
-"""Start link class to table in database
 """
+Lists all states objects from the database htbn_0e_6_usa
+"""
+
 import sys
-from model_state import Base, State
 from sqlalchemy import create_engine, select
+from model_state import Base, State
 
 if __name__ == "__main__":
     engine = create_engine(
