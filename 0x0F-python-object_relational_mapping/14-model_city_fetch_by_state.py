@@ -9,7 +9,6 @@ from model_state import Base, State
 from model_city import City
 from sqlalchemy.orm import sessionmaker
 
-
 if __name__ == "__main__":
     username = sys.argv[1]
     password = sys.argv[2]
