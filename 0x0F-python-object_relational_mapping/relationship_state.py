@@ -2,7 +2,7 @@
 """Define a State class and create a connection to the database.
 """
 import sys
-from sqlalchemy import create_engine, Column, Integer, String
+from sqlalchemy import Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.orm import relationship
@@ -19,6 +19,7 @@ class State(Base):
     name = Column(String(128), nullable=False)
     cities = relationship(
         "City",
-        cascade="all, delete",
+        order_by="City.id"
+        cascade="all, delete, delete-orphan",
         backref='state'
     )
