@@ -9,8 +9,7 @@ if __name__ == "__main__":
     password = sys.argv[2]
     db_name = sys.argv[3]
     name_of_state = sys.argv[4]
-    sql_query = "SELECT * FROM states WHERE name LIKE BINARY\
- %s ORDER BY id ASC".format(name_of_state)
+    sqlQuery = "SELECT * FROM states WHERE name LIKE BINARY %s ORDER BY id ASC"
 
     db = MySQLdb.connect(
         host="localhost",
@@ -21,7 +20,7 @@ if __name__ == "__main__":
     )
     cursor = db.cursor()
 
-    cursor.execute(sql_query)
+    cursor.execute(sqlQuery,name_of_state)
 
     for row in cursor.fetchall():
         print(row)
