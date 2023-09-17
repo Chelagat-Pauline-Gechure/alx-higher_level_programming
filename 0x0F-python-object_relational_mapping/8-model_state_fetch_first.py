@@ -26,7 +26,7 @@ if __name__ == "__main__":
 
         """Iterate over results & display them"""
         if first_state:
-            print(f"{state.id}: {state.name}")
+            print(f"{first_state.id}: {first_state.name}")
         else:
             print("Nothing")
 
