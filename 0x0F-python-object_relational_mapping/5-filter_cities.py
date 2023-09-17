@@ -8,9 +8,9 @@ if __name__ == "__main__":
     username = sys.argv[1]
     password = sys.argv[2]
     db_name = sys.argv[3]
-    sqlQuery = "SELECT cities.id, cities.name, states.name FROM cities \
-    JOIN states ON states.id = cities.state_id \
-    WHERE states.name LIKE BINARY %s ORDER BY cities.id"
+    name_of_state = sys.argv[4]
+    sqlQuery = "SELECT name FROM cities WHERE state_id = \
+    (SELECT id FROM states WHERE name LIKE BINARY %s) ORDER BY cities.id"
 
     db = MySQLdb.connect(
         host="localhost",
@@ -21,7 +21,7 @@ if __name__ == "__main__":
     )
     cursor = db.cursor()
 
-    cursor.execute(sqlQuery)
+    cursor.execute(sqlQuery, (name_of_state,))
 
     for row in cursor.fetchall():
         print(row)
