@@ -27,11 +27,11 @@ if __name__ == "__main__":
     session = Session()
 
     """Adding city with a relationship to a state and commit the changes"""
-    new_state = State(name='California')
-    new_city = City(name='San Francisco', state=new_state)
-    new_state.cities.append(new_city)
+    addState = State(name='California')
+    addCity = City(name='San Francisco', state=addState)
+    addState.cities.append(addCity)
 
-    session.add(new_state)
+    session.add(addState)
 
     session.commit()
     session.close()
