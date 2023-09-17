@@ -8,9 +8,11 @@ if __name__ == "__main__":
     username = sys.argv[1]
     password = sys.argv[2]
     db_name = sys.argv[3]
-    name_of_state = sys.argv[4]
-    sqlQuery = "SELECT name FROM cities WHERE state_id = \
-    (SELECT id FROM states WHERE name LIKE BINARY %s) ORDER BY cities.id"
+    state_name = sys.argv[4]
+    sqlQuery = """
+    SELECT name FROM cities WHERE state_id = \
+    (SELECT id FROM states WHERE name LIKE BINARY %s) ORDER BY cities.id
+    """
 
     db = MySQLdb.connect(
         host="localhost",
@@ -21,7 +23,7 @@ if __name__ == "__main__":
     )
     cursor = db.cursor()
     
-    cursor.execute(sqlQuery, (name_of_state,))
+    cursor.execute(sqlQuery, (state_name,))
 
     cities = cursor.fetchall()
     tuples = ()
