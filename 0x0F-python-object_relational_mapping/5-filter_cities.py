@@ -10,8 +10,11 @@ if __name__ == "__main__":
     db_name = sys.argv[3]
     state_name = sys.argv[4]
     sqlQuery = """
-    SELECT name FROM cities WHERE state_id = \
-    (SELECT id FROM states WHERE name LIKE BINARY %s) ORDER BY cities.id
+    SELECT cities.id, cities.name, states.name
+    FROM cities
+    JOIN states ON states.id = cities.state_id
+    HAVING BINARY states.name = %s
+    ORDER BY cities.id
     """
 
     db = MySQLdb.connect(
