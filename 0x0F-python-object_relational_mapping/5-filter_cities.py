@@ -28,7 +28,7 @@ if __name__ == "__main__":
 
     for city in cities:
         tuples += city
-        print(*tuples, sep=", ")
+    print(*tuples, sep=", ")
 
     cursor.close()
     db.close()
