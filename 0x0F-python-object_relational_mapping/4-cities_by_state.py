@@ -8,7 +8,7 @@ if __name__ == "__main__":
     username = sys.argv[1]
     password = sys.argv[2]
     db_name = sys.argv[3]
-    sqlQuery = "SELECT cities.id, cities.name, state.name FROM cities \
+    sqlQuery = "SELECT cities.id, cities.name, states.name FROM cities \
     JOIN states ON states.id = cities.state_id \
     ORDER BY cities.id"
 
