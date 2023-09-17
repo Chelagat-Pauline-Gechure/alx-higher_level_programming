@@ -14,8 +14,9 @@ if __name__ == "__main__":
 
 """SQLAlchemy database engine created with pooling & pre-ping"""
     engine = create_engine(
-    "mysql+mysqldb://{}:{}@localhost:3306/{}".format(
-        username, password, db_name), pool_pre_ping=True)
+        "mysql+mysqldb://{}:{}@localhost:3306/{}".format(
+        username, password, db_name), pool_pre_ping=True
+    )
 
     """Establish connection to the database"""
     with engine.connect() as connection:
