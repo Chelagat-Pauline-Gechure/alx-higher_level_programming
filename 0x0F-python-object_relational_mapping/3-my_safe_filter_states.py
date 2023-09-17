@@ -20,7 +20,7 @@ if __name__ == "__main__":
     )
     cursor = db.cursor()
 
-    cursor.execute(sqlQuery,(name_of_state,))
+    cursor.execute(sqlQuery, (name_of_state,))
 
     for row in cursor.fetchall():
         print(row)
