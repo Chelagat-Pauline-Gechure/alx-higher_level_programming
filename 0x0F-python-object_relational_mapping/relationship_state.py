@@ -1,17 +1,24 @@
 #!/usr/bin/python3
-"""model state
+"""Define a State class and create a connection to the database.
 """
-from sqlalchemy import Column, Integer, String
+import sys
+from sqlalchemy import create_engine, Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import sessionmaker
 from sqlalchemy.orm import relationship
 
+"""Create an instance of declarative base"""
 Base = declarative_base()
 
 
 class State(Base):
-    """ class class """
+    """Define the State class"""
     __tablename__ = 'states'
 
     id = Column(Integer, primary_key=True, nullable=False)
     name = Column(String(128), nullable=False)
-    cities = relationship('City', cascade="all, delete", backref='state')
+    cities = relationship(
+        "City",
+        cascade="all, delete",
+        backref='state'
+    )
