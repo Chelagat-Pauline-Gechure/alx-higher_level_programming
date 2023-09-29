@@ -5,9 +5,9 @@ displays the value of the X-Request-Id variable found in the header of
 the response.
 """
 import requests
-import sys
+from sys import argv
 
 
 if __name__ == "__main__":
-    req = requests.get(sys.argv[1])
+    req = requests.get(argv[1])
     print(req.headers.get('X-Request-Id'))
