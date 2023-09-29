@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Takes in a letter and sends a POST request to http://0.0.0.0:5000/search_user"""
+"""Takes letter & sends a POST request to http://0.0.0.0:5000/search_user"""
 import requests
 from sys import argv
 
