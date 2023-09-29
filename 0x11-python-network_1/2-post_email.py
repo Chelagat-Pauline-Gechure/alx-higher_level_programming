@@ -1,8 +1,19 @@
 #!/usr/bin/python3
-"""Takes URL sends request and displays value of X-Request-Id"""
+"""Sends a POST request to a given URL with a given email.
+Usage: ./2-post_email.py <URL> <email>
+  - Displays the body of the response.
+"""
+import sys
+import urllib.parse
 import urllib.request
-from sys import argv
 
-if len(argv) > 1:
-    with urllib.request.urlopen(argv[1]) as response:
-        print(response.getheader("X-Request-Id"))
+
+if __name__ == "__main__":
+    url = sys.argv[1]
+    value = {"email": sys.argv[2]}
+    data = urllib.parse.urlencode(value).encode("ascii")
+
+    request = urllib.request.Request(url, data)
+    with urllib.request.urlopen(request) as response:
+        print(response.read().decode("utf-8"))
+
