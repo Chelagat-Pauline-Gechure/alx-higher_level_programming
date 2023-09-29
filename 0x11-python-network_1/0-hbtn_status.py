@@ -4,7 +4,7 @@ import urllib.request
 
 
 if __name__ == "__main__":
-    fetchReq= urllib.request.Request("https://alx-intranet.hbtn.io/status")
+    fetchReq = urllib.request.Request("https://alx-intranet.hbtn.io/status")
     with urllib.request.urlopen(fetchReq) as response:
         body = response.read()
         print("Body response:")
