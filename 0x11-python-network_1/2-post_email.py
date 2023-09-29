@@ -1,9 +1,8 @@
 #!/usr/bin/python3
-"""Displays the body of the response (decoded in utf-8)"""
-from sys import argv
+"""Takes URL sends request and displays value of X-Request-Id"""
 import urllib.request
-
+from sys import argv
 
 if len(argv) > 1:
-    with urllib.request.urlopen(argv[1]) as request:
-        print(request.getheader("X-Request-Id"))
+    with urllib.request.urlopen(argv[1]) as response:
+        print(response.getheader("X-Request-Id"))
