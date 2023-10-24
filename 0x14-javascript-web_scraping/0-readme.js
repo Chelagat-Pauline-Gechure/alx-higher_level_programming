@@ -3,7 +3,7 @@
 const fs = require('fs');
 
 // Check if correct number of command-line arguments is provided
-if (process.argv.length < 3) {
+if (process.argv.length !== 3) {
   console.error('Usage: node read-file.js <file-path>');
   process.exit(1);
 }
