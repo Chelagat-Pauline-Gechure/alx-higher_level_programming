@@ -4,8 +4,8 @@ const request = require('request');
 
 // Check if the file path argument and string to write is provided
 if (process.argv.length !== 3) {
-    console.error('Usage: node <script-file> <ID>');
-    process.exit(1);
+  console.error('Usage: node <script-file> <ID>');
+  process.exit(1);
   }
 
 const movieId = process.argv[2];
