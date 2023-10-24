@@ -8,7 +8,7 @@ request.get(apiUrl, (error, response, body) => {
   if (error) {
     console.log(error);
   } else {
-    const data = JSON.parse(body);
-    console.log(data.title);
+    const movieData = JSON.parse(body);
+    console.log(movieData.title);
   }
 });
